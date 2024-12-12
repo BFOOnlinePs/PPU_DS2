@@ -1,0 +1,13 @@
+<?php
+header("Content-type: text/css; charset: UTF-8");
+use App\Models\SystemSettings; // Update the namespace as per your project structure
+
+$systemSettings = SystemSettings::first(); // Fetch the settings from the database
+
+// Check if settings exist and get the color, or set a default color
+$color = $systemSettings ? $systemSettings->color : "#FF0000"; // Replace with your default color value
+
+?>
+.bg-primary , .btn-primary{
+    background-color:lightgreen !important ;
+}

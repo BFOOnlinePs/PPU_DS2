@@ -1,0 +1,22 @@
+---
+# Version of the .cpanel.yml format
+format: "2"
+
+# Scripts section to define the deployment steps
+scripts:
+  # Pre-deploy script to pull the latest changes from GitHub
+  pre_deploy: |
+    git pull origin main  # Replace 'main' with the appropriate branch name if necessary
+
+# Ignore unnecessary files and directories to optimize the deployment
+ignore:
+  - node_modules
+  - .git
+  - .env
+  - storage/logs/*
+  - vendor
+
+# Define the runtime environment, such as PHP version
+runtime:
+  # Specify the PHP version
+  php: "8.1"  # Use the PHP version that matches your Laravel project requirements
