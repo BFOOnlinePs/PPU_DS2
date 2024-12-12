@@ -217,7 +217,6 @@ class sharedController extends Controller
         // $result = CompanyBranch::where('b_id', 1)->with('companyBranchLocation')->get();
         // $result = CompanyBranchLocation::with('companyBranch')->get();
 
-
         $result = User::with('role')->get();
 
         $transformedResult = $result->map(function ($user) {
